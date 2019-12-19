@@ -1,0 +1,90 @@
+/* 按钮基本样式 */
+        .wl-button {
+            display: inline-block;
+            line-height: 1;
+            white-space: nowrap;
+            cursor: pointer;
+            background: #fff;
+            border: 1px solid #dcdfe6;
+            color: #606266;
+            -webkit-appearance: none;
+            text-align: center;
+            box-sizing: border-box;
+            outline: none;
+            margin: 0;
+            transition: .1s;
+            font-weight: 500;
+            -moz-user-select: none;
+            -webkit-user-select: none;
+            -ms-user-select: none;
+            padding: 10px 20px;
+            font-size: 14px;
+            border-radius: 4px;
+        }
+
+        .wl-button-primary {
+            background-color: #409eff;
+            color: #fff;
+            border-color: #409eff;
+        }
+
+        .wl-button:hover {
+            background-color: #c6e2ff;
+            border-color: #c6e2ff;
+        }
+
+        .wl-button-primary:hover {
+            background-color: #c6e2ff;
+            border-color: #c6e2ff;
+        }
+
+        .dialog-modle-wrap {
+            position: fixed;
+            left: 0;
+            top: 0;
+            z-index: 9999;
+            background: rgba(12, 12, 12, 0.5);
+            width: 100vw;
+            height: 100vh;
+            transition: all .7s ease-in-out;
+        }
+
+        .dialog-modle-wrap .dialog-content {
+            margin: 30vh auto;
+            width: 350px;
+            padding: 15px 20px;
+            box-shadow: 0 2px 12px 0 rgba(0, 0, 0, .1);
+            border-radius: 4px;
+            border: 1px solid #e4e7ed;
+            background-color: #fff;
+            height: 110px;
+        }
+
+        .dialog-content .header {
+            position: relative;
+            width: 100%;
+            padding-bottom: 15px;
+
+        }
+
+        .dialog-content .header .dialog-title {
+            font-size: 18px;
+            color: #303133;
+        }
+
+        .dialog-content .header img {
+            position: absolute;
+            right: 0px;
+            width: 20px;
+            height: 20px;
+            cursor: pointer;
+        }
+
+        .dialog-content .body,
+        .dialog-content .footer {
+            padding-top: 10px;
+        }
+
+        .dialog-content .footer {
+            text-align: right;
+        }

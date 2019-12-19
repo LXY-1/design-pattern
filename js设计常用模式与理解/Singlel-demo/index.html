@@ -1,0 +1,113 @@
+<!--
+ * @Description: 
+ * @version: 
+ * @Author: lxw
+ * @Date: 2019-12-19 15:34:33
+ * @LastEditors: lxw
+ * @LastEditTime: 2019-12-19 20:13:06
+ -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>单例模式创建弹窗组件</title>
+    <!-- <link rel="stylesheet" href="./css/dialog.css"> -->
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        .wl-button {
+            display: inline-block;
+            line-height: 1;
+            white-space: nowrap;
+            cursor: pointer;
+            background: #fff;
+            border: 1px solid #dcdfe6;
+            color: #606266;
+            -webkit-appearance: none;
+            text-align: center;
+            box-sizing: border-box;
+            outline: none;
+            margin: 0;
+            transition: .1s;
+            font-weight: 500;
+            -moz-user-select: none;
+            -webkit-user-select: none;
+            -ms-user-select: none;
+            padding: 10px 20px;
+            font-size: 14px;
+            border-radius: 4px;
+        }
+
+        .wl-button-primary {
+            background-color: #409eff;
+            color: #fff;
+            border-color: #409eff;
+        }
+
+        .wl-button:hover {
+            background-color: #c6e2ff;
+            border-color: #c6e2ff;
+        }
+
+        .wl-button-primary:hover {
+            background-color: #c6e2ff;
+            border-color: #c6e2ff;
+        }
+
+
+        .main-body {
+            padding-top: 15vh;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- <div class="dialog-modle-wrap">
+        <div class="dialog-content">
+            <div class="header">
+                <span class="dialog-title">一个确认框组件</span>
+                <img src="./imgs/remove.png" alt="remove">
+            </div>
+            <div class="body">
+                <h5>是否确认删除?</h5>
+            </div>
+            <div class="footer">
+                <button class="wl-button">取消</button>
+                <button class="wl-button wl-button-primary">确认</button>
+            </div>
+        </div>
+    </div> -->
+
+    <div class="main-body">
+        <h4>这是一个使用单例实现的弹窗组件</h4>
+        <button class="wl-button wl-button-primary" id="delte">确认删除</button>
+    </div>
+
+    <script src="./dialog.js"></script>
+    <script>
+
+        //点击显示弹窗组件，使用单例模式创建的弹窗组件。
+        document.getElementById('delte').onclick = () => {
+            let myDialogConfirm = $myDialog.createDialogEle();
+            myDialogConfirm.dialogAction.showLayer();
+            //监听点击确认按钮
+            myDialogConfirm.confirm(function(res){
+               alert(res);
+               console.log(`${res}可以执行相关业务逻辑`)
+            })
+
+        }
+
+
+    </script>
+</body>
+
+</html>
