@@ -11,7 +11,6 @@
 
 const $myDialog = (function () {
     //单例管理,每一个单例管理对应的dom创建、dom内部按钮点击事件的绑定，实现只需要执行一次，下次再次执行返回的是闭包缓存的单例对象
-
     const getDialogSingle = (function () {
         let ele;
         return function (fn, ...arg) {

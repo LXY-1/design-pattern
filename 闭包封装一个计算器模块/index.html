@@ -1,0 +1,61 @@
+<!--
+ * @Description: 
+ * @version: 
+ * @Author: lxw
+ * @Date: 2019-12-23 16:24:23
+ * @LastEditors  : lxw
+ * @LastEditTime : 2019-12-23 17:24:05
+ -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>自动计数</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        .auto-time{
+            width: 100vw;
+            height: 100vh;
+            text-align: center;
+            line-height: 100vh; 
+        }
+        .auto-time span{
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            font-weight: bold;
+            font-size: 50px;
+            transition: all .3s ease-in;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="auto-time">
+        <span id="num-span" style="color:#1abc9c;">1</span>
+    </div>
+
+
+    <script src="./index.js"></script>
+    <script src="./colors.js"></script>
+    <script>
+
+
+
+        // 使用：由于没有使用到解析模块化相关插件，这里就直接使用a里面的全局模块名autoAdd,当然这你js文件直接导入autoAdd是属于一个全局变量名是会有变量名污染的，但是今天的重点还是闭包的使用，至少在闭包里面的变量名是没有污染的 utoAdd
+        const numEle = document.getElementById('num-span');
+        autoAdd(1,function(num){
+            let index = parseInt(Math.random()* (colors.length - 1));
+            numEle.innerText = num;
+            numEle.style.color = colors[index]; 
+        },1000)
+    </script>
+</body>
+
+</html>
